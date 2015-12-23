@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.sanyam.popmovies.SquareImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/picture"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <com.example.sanyam.popmovies.SquareImageView
-        android:id="@+id/picture"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop" />
-</FrameLayout>
+    android:scaleType="centerCrop" />
