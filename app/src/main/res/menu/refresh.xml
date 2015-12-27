@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/onRefresh"
+        android:title="Refresh" />
+    <item
+        android:id="@+id/Sortby"
+        android:title="Sort by">
+        <menu>
+            <group
+                android:id="@+id/SortGroup"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/sortbyPop"
+                    android:checked="true"
+                    android:title="Popularity" />
+                <item
+                    android:id="@+id/sortbyRat"
+                    android:title="Rating" />
+            </group>
+        </menu>
+    </item>
+</menu>
