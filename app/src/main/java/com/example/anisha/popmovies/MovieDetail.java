@@ -1,4 +1,4 @@
-package com.example.sanyam.popmovies;
+package com.example.anisha.popmovies;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,16 +31,16 @@ public class MovieDetail extends AppCompatActivity {
             vote.setText(intent.getStringExtra("vote"));
             Log.e("vote", String.valueOf(intent.getStringExtra("vote")));
         }
-        final ImageView imageView = (ImageView) findViewById(R.id.thumbnail);
+        final ImageView imageViewPoster = (ImageView) findViewById(R.id.thumbnail);
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-        Picasso.with(this).load("http://i.imgur.com/DvpvklR.png")
-                .into(imageView, new com.squareup.picasso.Callback() {
+        Picasso.with(this).load(intent.getStringExtra("poster_path"))
+                .into(imageViewPoster, new com.squareup.picasso.Callback() {
                     @Override
                     public void onSuccess() {
                         if (progressBar != null) {
                             progressBar.setVisibility(View.GONE);
-                            imageView.setVisibility(View.VISIBLE);
+                            imageViewPoster.setVisibility(View.VISIBLE);
                         }
                     }
 
@@ -48,10 +48,12 @@ public class MovieDetail extends AppCompatActivity {
                     public void onError() {
                         if (progressBar != null) {
                             progressBar.setVisibility(View.GONE);
-                            imageView.setImageResource(R.drawable.sample_no);
-                            imageView.setVisibility(View.VISIBLE);
+                            imageViewPoster.setImageResource(R.drawable.nointernet);
+                            imageViewPoster.setVisibility(View.VISIBLE);
                         }
                     }
                 });
+        ImageView imageViewBackdrop = (ImageView) findViewById(R.id.backdrop);
+        Picasso.with(this).load(intent.getStringExtra("backdrop_path")).fit().centerCrop().placeholder(R.drawable.loading).into(imageViewBackdrop);
     }
 }

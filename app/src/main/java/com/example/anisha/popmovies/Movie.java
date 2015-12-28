@@ -1,7 +1,7 @@
-package com.example.sanyam.popmovies;
+package com.example.anisha.popmovies;
 
 /**
- * Created by Sanyam Jain & Anisha Lunawat on 27/12/15.
+ * Created by Anisha Lunawat on 27/12/15.
  */
 public class Movie {
     private String poster_path;

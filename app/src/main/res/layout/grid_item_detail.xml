@@ -4,24 +4,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/title"
+    <ImageView
+        android:id="@+id/backdrop"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#009688"
-        android:gravity="center_vertical"
-        android:paddingLeft="8dp"
-        android:text="Charlie"
-        android:textColor="#ffffff"
-        android:textSize="48sp" />
+        android:scaleType="centerCrop" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
-        android:orientation="vertical"
-        android:padding="8dp">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,19 +23,24 @@
             android:layout_weight="2"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/thumbnail"
+            <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:visibility="gone" />
+                android:gravity="left">
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="@style/Widget.AppCompat.ProgressBar"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                <ImageView
+                    android:id="@+id/thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -51,17 +50,27 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Dummy Title"
+                    android:textAppearance="?android:textAppearanceLarge" />
+
+                <TextView
                     android:id="@+id/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:text="2015"
-                    android:textAppearance="?android:textAppearanceLarge" />
+                    android:textAppearance="?android:textAppearanceMedium" />
 
 
                 <TextView
                     android:id="@+id/vote"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:text="8.1/10" />
 
             </LinearLayout>
@@ -71,8 +80,9 @@
         <TextView
             android:id="@+id/overview"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
             android:text="Every child comes into the world full of promises, and none so more than chappie: he is gifted, special, a prodigy. Chappie he is a robot." />
     </LinearLayout>
 </LinearLayout>
