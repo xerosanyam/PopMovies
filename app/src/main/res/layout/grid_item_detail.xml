@@ -72,6 +72,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="8.1/10" />
+                <Button
+                    android:id="@+id/favroite"
+                    android:onClick="markAsFavorite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mark as Favorite"/>
 
             </LinearLayout>
 

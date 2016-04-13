@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Pop Movies</string>
+    <string name="No_Internet">Internet Unavailable</string>
 </resources>
